@@ -1,0 +1,266 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}  
+\usepackage{ae}
+\usepackage{aecompl}
+\usepackage{indentfirst}
+\usepackage{ragged2e}
+\usepackage{subcaption}
+%\usepackage{subfigure}
+\usepackage{amsmath}
+\DeclareMathOperator{\tr}{\rm tr}
+\DeclareMathOperator{\adj}{\rm adj}
+\DeclareMathOperator{\cof}{\rm cof}
+\DeclareMathOperator{\diag}{\rm diag}
+\DeclareMathOperator{\posto}{\rm posto}
+\DeclareMathOperator{\real}{\rm real}
+\DeclareMathOperator{\proj}{\rm proj}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{commath}
+\usepackage[normalem]{ulem}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{framed,color}
+\usepackage{textpos}
+\usepackage{natbib}
+\usepackage{algorithm,algorithmic}
+\usepackage{multicol}
+\usepackage{multimedia}
+%\usepackage{amsmath}
+\usepackage[makeroom]{cancel}
+\usepackage{animate}
+%\usepackage{movie15}
+\usepackage{multicol}
+\usepackage{arydshln}
+
+\usepackage{beamerthemesplit}
+\usepackage{lipsum}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\mode<presentation> {
+		
+	% The Beamer class comes with a number of default slide themes
+	% which change the colors and layouts of slides. Below this is a list
+	% of all the themes, uncomment each in turn to see what they look like.
+	
+	%\usetheme{default}
+	%\usetheme{AnnArbor}
+	%\usetheme{Antibes}
+	%\usetheme{Bergen}
+	%\usetheme{Berkeley}
+	%\usetheme{Berlin}
+	%\usetheme{Boadilla}
+	%\usetheme{CambridgeUS}
+	%\usetheme{Copenhagen}
+	%\usetheme{Darmstadt}
+	%\usetheme{Dresden}
+	%\usetheme{Frankfurt}
+	%\usetheme{Goettingen}
+	%\usetheme{Hannover}
+	%\usetheme{Ilmenau}
+	%\usetheme{JuanLesPins}
+	%\usetheme{Luebeck}
+	\usetheme{Madrid}
+	%\usetheme{Malmoe}
+	%\usetheme{Marburg}
+	%\usetheme{Montpellier}
+	%\usetheme{PaloAlto}
+	%\usetheme{Pittsburgh}
+	%\usetheme{Rochester}
+	%\usetheme{Singapore}
+	%\usetheme{Szeged}
+	%\usetheme{Warsaw}
+	
+	% As well as themes, the Beamer class has a number of color themes
+	% for any slide theme. Uncomment each of these in turn to see how it
+	% changes the colors of your current slide theme.
+	
+	%\usecolortheme{albatross}
+	%\usecolortheme{beaver}
+	%\usecolortheme{beetle}
+	%\usecolortheme{crane}
+	%\usecolortheme{dolphin}
+	%\usecolortheme{dove}
+	%\usecolortheme{fly}
+	%\usecolortheme{lily}
+	%\usecolortheme{orchid}
+	%\usecolortheme{rose}
+	%\usecolortheme{seagull}
+	%\usecolortheme{seahorse}
+	%\usecolortheme{whale}
+	%\usecolortheme{wolverine}
+	
+	%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+	%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+	
+	\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+% formatting
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+% bibliography
+\bibliographystyle{abbrv}
+% make entries smaller
+\renewcommand\bibfont{\scriptsize}
+
+% Cornell color
+\definecolor{carmine}{rgb}{0.59, 0.0, 0.09}
+\usecolortheme[named=carmine]{structure}
+\setbeamercolor{postit2}{fg=white,bg=carmine}
+\newcommand{\colortext}[1]{\color{carmine}#1\color{black}}
+\definecolor{shadecolor}{rgb}{1,0.8,0.3}
+
+% dont count backup slides
+\newcommand{\backupbegin}{
+	\newcounter{finalframe}
+	\setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+	\setcounter{framenumber}{\value{finalframe}}
+}
+
+%% handy shortcuts
+% put all figures in the figures folder, no need to specify the path anymore
+\graphicspath{ {./figures/} }
+% or the extension
+\DeclareGraphicsExtensions{.png,.pdf,.jpeg,.jpg}
+% sets definition
+\newcommand{\myset}[2]{#1 = \{1,\;2,...,\;#2\}} % V = {1, 2...n}
+\newcommand{\ainA}[2]{#1 \in #2} 				% v \in V
+\newcommand{\forallainA}{\forall \ainA}  		% \forall v in V
+
+% math stuff
+\newcommand{\halfopen}[2]{\ensuremath{[#1,#2)}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% reference stuff
+\newcommand{\eqc}[1]{Eq. (\ref{#1})}
+\newcommand{\eqsc}[2]{Eqs. (\ref{#1})-(\ref{#2})}
+\newcommand{\sectc}[1]{Section \ref{#1}}
+\newcommand{\figc}[1]{Fig. \ref{#1}}
+\newcommand{\makesmall}[1]{\small{#1}\normalsize}
+
+% multi-robot path planning (delete this if you don't want them)
+% searchers, vertices, time
+\newcommand{\searcher}{s}
+\newcommand{\vertex}{v}
+\newcommand{\timet}{t}
+% # of times, vertices, searchers
+\newcommand{\deadline}{\tau}
+\newcommand{\maxv}{n}
+\newcommand{\maxs}{m}
+\newcommand{\horizon}{h}
+% set of time, vertices, searchers
+\newcommand{\tset}{T}
+\newcommand{\vset}{V}
+\newcommand{\sset}{S}
+\newcommand{\target}{object}
+\newcommand{\targets}{objects}
+% seacher and time
+% superscripts
+\newcommand{\mysup}[2]{{#1}^{#2}}
+\newcommand{\tos}[1]{\mysup{#1}{s}} 				% x^{s}  
+\newcommand{\tot}[2]{{#1}^{t#2}}					% x^{t}
+\newcommand{\tost}[2]{{#1}^{s, t#2}} 				% x^{s, t}
+% subscripts
+\newcommand{\mysub}[2]{{#1}_{#2}}
+\newcommand{\stv}[1]{\tost_{#1}}					% x^{s, t}_{v}
+\newcommand{\tv}[1]{\tot_{#1}}						% x^{t}_{v}
+\newcommand{\optV}{V^{s, t}}
+% _{u, v}
+\newcommand{\uv}[2]{_{#1, #2}}
+\newcommand{\bcap}{b_{\rm c}(t)}
+\newcommand{\betacap}{\tost{\beta}{}_{\rm c}}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Short Title]{Title} 								% The short title appears at the bottom of every slide, full title only on the title page
+\bigskip
+\author[Asfora]{\textbf{Beatriz Asfora} }	 			% Your name
+\bigskip
+\institute[Cornell Eng] 								% Your institution - appear on the bottom of every slide
+{
+
+\large \textbf{Autonomous Systems Lab}\\
+%\small NSF: Search and Rescue\\ % subtitle or some other info
+\smallskip
+\small {Cornell University} \\ 
+}
+\bigskip
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+%\setbeamertemplate{footline}{}
+%\setbeamertemplate{logo}{}
+
+\begin{frame}
+\titlepage 			% title page as the first slide
+\end{frame}
+
+% LOGO: add ASL logo to every frame
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{90mm}(0.94\textwidth,-1cm)
+	\includegraphics[height=1cm,width=1cm]{Autonomous-min-Light}
+\end{textblock*}}
+
+%
+\section{Start}
+%
+% This is where the slides actually start
+\begin{frame}{Frame title}
+Hello
+\end{frame}
+
+
+\section{Question}
+\begin{frame}{Questions?}
+	\centering
+	\includegraphics[width=0.5\textwidth]{asktherobot}\\
+	\medskip
+	\small Contact: ba386@cornell.edu
+\end{frame}
+
+\backupbegin
+% End of presentation (I like to put a "The End" slide to know where the backup begins)
+\section{The End}
+\begin{frame}
+	\begin{block}{}
+		\centering
+		\medskip
+		\LARGE \textbf{The End}
+		\medskip
+	\end{block}
+\end{frame}
+
+\end{document}
+

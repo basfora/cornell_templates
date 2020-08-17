@@ -1,0 +1,104 @@
+\documentclass[letterpaper, 10 pt, journal, twoside]{article}
+\usepackage[american]{babel}
+
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{acronym}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pdfpages}
+\usepackage{bookmark}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{tcolorbox}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{multicol}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{vwcol}  
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{basicstyle=\small, frame=single}
+
+% customization
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+
+% change section style
+\usepackage{titlesec}
+% roman style
+\renewcommand{\thesection}{\Roman{section}.}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{0.5em}{}
+
+
+\newenvironment{myfont}{\fontfamily{cmtt}\selectfont}{\par}
+\DeclareTextFontCommand{\textmyfont}{\myfont}
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+
+%% handy shortcuts
+% put all figures in the figures folder, no need to specify the path anymore
+\graphicspath{ {./figures/} }
+% or the extension
+\DeclareGraphicsExtensions{.png,.pdf,.jpeg,.jpg}
+
+% sets definition
+\newcommand{\myset}[2]{#1 = \{1,\;2,...,\;#2\}} % V = {1, 2...n}
+\newcommand{\ainA}[2]{#1 \in #2} 				% v \in V
+\newcommand{\forallainA}{\forall \ainA}  		% \forall v in V
+
+% math stuff
+\newcommand{\halfopen}[2]{\ensuremath{[#1,#2)}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% reference stuff
+\newcommand{\eqc}[1]{Eq. (\ref{#1})}
+\newcommand{\eqsc}[2]{Eqs. (\ref{#1})-(\ref{#2})}
+\newcommand{\sectc}[1]{Section \ref{#1}}
+\newcommand{\figc}[1]{Fig. \ref{#1}}
+
+% lazy bea
+\newcommand{\minisec}[1]{\vspace{1mm} \noindent\textbf{#1} \vspace{-2mm}}
+\newcommand{\minisecx}[1]{\vspace{1mm} \noindent\textbf{#1} \vspace{1mm}}
+
+\newcommand{\makesmall}[1]{\small{#1}\normalsize}
+\newcommand{\qus}[1]{\noindent\textbf{Q: } #1 \\}
+\newcommand{\ans}[1]{\noindent\textbf{A: } #1 \\}
+
+
+\begin{document}	
+
+	\begin{vwcol}[widths={0.3,0.7},sep=0.5cm, justify=flush,rule=0.2pt,indent=0em] 
+		\vspace{1cm}
+		\includegraphics[width=0.145\linewidth]{cu-logo} 
+		\includegraphics[width=0.145\linewidth]{asl-logo}
+		
+		\large{\textbf{NSF:NRI:FND Search \& Rescue}}\\
+		Document Title\\
+		\large{\textbf{Beatriz Asfora}}\\
+		Document Subtitle - Version \#\\
+		\today 
+	\end{vwcol} 
+
+\vspace{5mm}
+
+\input{contents/overview}
+\input{contents/sec2}
+
+\small
+\bibliographystyle{acm}
+\bibliography{ref}
+
+
+\end{document}
