@@ -1,5 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Write-Up Template - Miscellaneous Purposes
+% LateX Template
+% Version 1.0 (09/04/20)
+%
+% This template has been downloaded from:
+% https://github.com/basfora/cornell_templates.git
+%
+% License: MIT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \documentclass[letterpaper, 10 pt, journal, twoside]{article}
-%\documentclass[letterpaper, 10 pt, journal, twoside]{IEEEtran}
 \usepackage[american]{babel}
 
 \usepackage{lmodern}			% Usa a fonte Latin Modern			
@@ -28,7 +40,7 @@
 \usepackage{subcaption}
 \usepackage{url}
 \usepackage{listings}
-\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\usepackage{color} % red, green, blue, yellow, cyan, magenta, black, white
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
 \lstset{basicstyle=\small, frame=single}
@@ -36,8 +48,8 @@
 		MOVE24, DELAY, GOTO%
 	},emphstyle={\color{blue}\bfseries}%
 }
-\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 \newenvironment{myfont}{\fontfamily{cmtt}\selectfont}{\par}
 \DeclareTextFontCommand{\textmyfont}{\myfont}
 \newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
@@ -90,6 +102,7 @@
 
 \input{contents/overview}
 \input{contents/sec2}
+\input{contents/conclusion}
 
 \small
 \bibliographystyle{acm}
