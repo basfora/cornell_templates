@@ -2,7 +2,7 @@
 
 LateX templates with Cornell University and Autonomous Systems Lab logos.
 
-Download this repository and modify files as you need
+Download this repository and modify files as needed.
 
 -----
 
